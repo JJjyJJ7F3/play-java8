@@ -1,8 +1,8 @@
 package self.jjjyjj.inventory;
 
 public class Apple {
-    private String color;
-    private int weight;
+    private final String color;
+    private final int weight;
 
     public Apple(String color, int weight) {
         this.color = color;
@@ -15,13 +15,5 @@ public class Apple {
 
     public int getWeight() {
         return weight;
-    }
-
-    public boolean isGreen() {
-        return "green".equals(color);
-    }
-
-    public boolean isHeavy() {
-        return weight > 150;
     }
 }
