@@ -22,7 +22,7 @@ class AppleFilterTest {
     }
 
     @Test
-    void filterApples_returnsAll_whenPredicateAlwaysTrue() {
+    void filter_returnsAll_whenPredicateAlwaysTrue() {
         List<Apple> inventory = Arrays.asList(new Apple("red", 150), new Apple("green", 120));
         Predicate<Apple> predicate = apple -> true;
 
@@ -32,7 +32,7 @@ class AppleFilterTest {
     }
 
     @Test
-    void filterApples_returnsNo_whenPredicateAlwaysFalse() {
+    void filter_returnsEmptyList_whenPredicateAlwaysFalse() {
         List<Apple> inventory = Arrays.asList(new Apple("red", 150), new Apple("green", 120));
         Predicate<Apple> predicate = apple -> false;
 
@@ -42,7 +42,7 @@ class AppleFilterTest {
     }
 
     @Test
-    void filterApples_returnsFilteredApples_whenPredicateMatchesSome() {
+    void filter_returnsFilteredApples_whenPredicateMatchesSome() {
         Apple apple1 = new Apple("red", 150);
         Apple apple2 = new Apple("green", 120);
         Apple apple3 = new Apple("red", 180);
@@ -55,7 +55,7 @@ class AppleFilterTest {
     }
 
     @Test
-    void filterApples_returnsFilteredApples_whenPredicateMatchesNo() {
+    void filter_returnsEmptyList_whenPredicateMatchesNo() {
         Apple apple1 = new Apple("red", 150);
         Apple apple2 = new Apple("green", 120);
         List<Apple> inventory = Arrays.asList(apple1, apple2);

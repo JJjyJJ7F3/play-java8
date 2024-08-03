@@ -1,6 +1,5 @@
 package self.jjjyjj.inventory;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -14,12 +13,8 @@ public class AppleFilter {
      * @return a list of apples that match the predicate
      */
     public static List<Apple> filter(List<Apple> inventory, Predicate<Apple> p) {
-        List<Apple> result = new ArrayList<>();
-        for (Apple apple : inventory) {
-            if (p.test(apple)) {
-                result.add(apple);
-            }
-        }
-        return result;
+        return inventory.stream()
+                .filter(p)
+                .toList();
     }
 }
